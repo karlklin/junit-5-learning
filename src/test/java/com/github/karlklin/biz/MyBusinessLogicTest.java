@@ -7,24 +7,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @Acceptance
-public class MyBusinessLogicTest {
+class MyBusinessLogicTest {
 
     private MyBusinessLogic businessLogic;
 
     @BeforeAll
-    public static void setUpAll() {
+    static void setUpAll() {
         System.out.println("set up all");
     }
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         System.out.println("set up");
 
         businessLogic = new MyBusinessLogic();
     }
 
     @Test
-    public void shouldThrowException() {
+    void shouldThrowException() {
         Assertions.assertThrows(UnsupportedOperationException.class, () -> {
             businessLogic.businessMethodThatThrowsException();
         });
@@ -38,7 +38,7 @@ public class MyBusinessLogicTest {
     }
 
     @Test
-    public void assertThrowsException() {
+    void assertThrowsException() {
         String str = null;
         assertThrows(IllegalArgumentException.class, () -> {
             Integer.valueOf(str);
@@ -46,12 +46,12 @@ public class MyBusinessLogicTest {
     }
 
     @AfterEach
-    public void tearDown() {
+    void tearDown() {
         System.out.println("tear down");
     }
 
     @AfterAll
-    public static void tearDownAll() {
+    static void tearDownAll() {
         System.out.println("tear down all");
     }
 }
