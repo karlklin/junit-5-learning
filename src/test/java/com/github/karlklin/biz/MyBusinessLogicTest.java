@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @Acceptance
+@DisplayName("My Fancy Business Logic Test Case")
 class MyBusinessLogicTest {
 
     private MyBusinessLogic businessLogic;
@@ -24,6 +25,7 @@ class MyBusinessLogicTest {
     }
 
     @Test
+    @DisplayName("checks asserts for exception")
     void shouldThrowException() {
         Assertions.assertThrows(UnsupportedOperationException.class, () -> {
             businessLogic.businessMethodThatThrowsException();
