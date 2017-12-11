@@ -11,5 +11,11 @@ import org.junit.runner.RunWith;
 // test merge #3
 // test merge #4
 // test merge #5
+// test merge #6
+// test merge #7
+// test merge #8
+// test merge #9
+// test merge #10
+// test merge #11
 public class BizTestSuite {
 }
