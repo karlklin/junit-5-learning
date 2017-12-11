@@ -11,13 +11,24 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <!--workaround for sharing the same version for project dependencies and plugins dependencies-->
+        <junitJupiterEngineVersion>5.0.2</junitJupiterEngineVersion>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junitJupiterEngineVersion}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.0.2</version>
             <scope>test</scope>
         </dependency>
 
@@ -50,7 +61,7 @@
                     <dependency>
                         <groupId>org.junit.jupiter</groupId>
                         <artifactId>junit-jupiter-engine</artifactId>
-                        <version>5.0.2</version>
+                        <version>${junitJupiterEngineVersion}</version>
                     </dependency>
                 </dependencies>
             </plugin>
